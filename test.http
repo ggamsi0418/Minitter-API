@@ -1,0 +1,45 @@
+### 회원 가입 
+
+POST http://localhost:5000/sign-up HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "name" : "박정빈",
+    "email" : "ggamsi0418@naver.com",
+    "password" :"test1234",
+    "profile" : "구공팩토리 3기 백엔드 개발 공부 중"
+}
+
+
+### 회원 가입 
+
+POST http://localhost:5000/sign-up HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "name" : "홍길동",
+    "email" : "gildong@naver.com",
+    "password" :"test5678",
+    "profile" : "동해 번쩍, 서해 번쩍"
+}
+
+### 트윗 글 작성
+
+POST http://localhost:5000/tweet HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "id" : "1",
+    "tweet" : "My First Tweet"
+}
+
+
+### 팔로우 하기
+
+POST http://localhost:5000/follow HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "follow" : 2,
+    "id" : 1
+}
