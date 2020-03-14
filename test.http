@@ -1,4 +1,4 @@
-### 회원 가입 
+### 박정빈 회원 가입 
 
 POST http://localhost:5000/sign-up HTTP/1.1
 Content-Type: application/json;charset=UTF-8
@@ -11,7 +11,7 @@ Content-Type: application/json;charset=UTF-8
 }
 
 
-### 회원 가입 
+### 홍길동 회원 가입 
 
 POST http://localhost:5000/sign-up HTTP/1.1
 Content-Type: application/json;charset=UTF-8
@@ -23,7 +23,7 @@ Content-Type: application/json;charset=UTF-8
     "profile" : "동해 번쩍, 서해 번쩍"
 }
 
-### 트윗 글 작성
+### 박정빈 트윗 글 작성
 
 POST http://localhost:5000/tweet HTTP/1.1
 Content-Type: application/json;charset=UTF-8
@@ -31,6 +31,16 @@ Content-Type: application/json;charset=UTF-8
 {
     "id" : "1",
     "tweet" : "My First Tweet"
+}
+
+### 홍길동 트윗 글 작성
+
+POST http://localhost:5000/tweet HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "id" : "2",
+    "tweet" : "Hello, world!"
 }
 
 
@@ -54,3 +64,58 @@ Content-Type: application/json;charset=UTF-8
     "unfollow" : 2,
     "id" : 1
 }
+
+
+### 타임라인 확인하기
+GET http://localhost:5000/timeline/1 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+
+
+////////////////// DB 연결 이후 ////////////////////////
+### DB에 연결된 sign-up 엔드포인트 테스트
+POST http://localhost:5000/sign-up HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "name"  :   "코난",
+    "email" :   "conan@gmail.com",
+    "password"  :   "test6642",
+    "profile"   :   "Software Engineer"
+}
+
+
+### DB에 연결된 tweet 엔드포인트 테스트
+POST http://localhost:5000/tweet HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "id": "5",
+    "tweet": "안녕하세요. 만나서 반갑습니다."
+}
+
+
+### DB에 연결된 follow 엔드포인트 테스트
+POST http://localhost:5000/follow HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "follow" : 9,
+    "id" : 5
+}
+
+
+### DB에 연결된 unfollow 엔드포인트 테스트
+POST http://localhost:5000/unfollow HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+
+{
+    "unfollow" : 7,
+    "id" : 5
+}
+
+
+
+### DB에 연결된 timeline 엔드포인트 테스트
+GET http://localhost:5000/timeline/5 HTTP/1.1
+Content-Type: application/json;charset=UTF-8
