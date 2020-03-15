@@ -78,20 +78,29 @@ POST http://localhost:5000/sign-up HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 
 {
-    "name"  :   "코난",
-    "email" :   "conan@gmail.com",
-    "password"  :   "test6642",
+    "name"  :   "레드벨벳",
+    "email" :   "red@gmail.com",
+    "password"  :   "test7777",
     "profile"   :   "Software Engineer"
 }
 
+### DB에 연결된 login 엔드포인트 테스트
+POST http://localhost:5000/login HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Connection: keep-alive
+
+{
+    "email": "red@gmail.com",
+    "password": "test7777"
+}
 
 ### DB에 연결된 tweet 엔드포인트 테스트
 POST http://localhost:5000/tweet HTTP/1.1
 Content-Type: application/json;charset=UTF-8
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNSwiZXhwIjoxNTg0MzcxNDkwfQ.ucLNGtYPYqqde2JDF3WosGoSu3bPW0smkwg-JbiFuHE
 
 {
-    "id": "5",
-    "tweet": "안녕하세요. 만나서 반갑습니다."
+    "tweet": "안녕하세요. 모두들 즐거운 하루가 되길 바랍니다."
 }
 
 
